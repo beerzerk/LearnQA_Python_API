@@ -7,11 +7,13 @@ response = requests.get(url)
 print("Case 1")
 print("Not enough parameters in request:", response.text)
 print("Server response:", response.status_code)
+
 #2. Делает http-запрос не из списка. Например, HEAD. Описать что будет выводиться в этом случае.
 response = requests.head(url, data={"method": "HEAD"})
 print("Case 2")
 print("Wrong type of request:", response.text)
 print("Server response:", response.status_code)
+
 #3. Делает запрос с правильным значением method. Описать что будет выводиться в этом случае.
 response = requests.post(url, data={"method": "POST"})
 print("Case 3")
@@ -25,7 +27,9 @@ print("Case 4")
 methods = ["GET", "POST", "PUT", "DELETE"]
 for api_method in methods:
     for params_method in methods:
-        response = requests.request(api_method, url, params={"method": params_method}, data={"method": params_method},)
+        response = requests.request(api_method, url, params={"method": params_method}, data={"method": params_method})
         print("Method:", api_method, "Params:", params_method)
         print("Response:", response.text)
         print("Server response:", response.status_code)
+
+
