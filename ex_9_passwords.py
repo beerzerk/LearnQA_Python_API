@@ -12,8 +12,8 @@ for password in passwords:
     cookies = {"auth_cookie": cookie_value}
     response2 = requests.get(url2, cookies=cookies)
     if response2.text != "You are NOT authorized":
-        print(f"{response2.text} \n Your password is: {password}")
-
+        print(f"{response2.text}\nYour password is: {password}")
+        break
 # login = "super_admin"
 # password = "password"
 # response = requests.post("https://playground.learnqa.ru/ajax/api/get_secret_password_homework", data={"login": login, "password": password})
