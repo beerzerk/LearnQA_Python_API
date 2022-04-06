@@ -26,6 +26,7 @@ class TestUserAuth:
 
         assert "user_id" in response2.json(), "There is no user in the second response"
         user_id_from_check_method = response2.json()["user_id"]
+        print(user_id_from_auth_method)
 
         assert user_id_from_auth_method == user_id_from_check_method, "User id from auth method is not equal to user in check method"
 
